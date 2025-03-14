@@ -4,7 +4,7 @@ print("loaded file from github!")
 speaker = peripheral.find("speaker")
 
 while true do
-  speaker.playSound("minecraft:entity.player.hurt")
+  speaker.playSound("entity.creeper.primed")
   turtle.forward()
 end
 
