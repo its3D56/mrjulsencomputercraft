@@ -5,6 +5,6 @@ speaker = peripheral.find("speaker")
 
 while true do
   speaker.playSound("entity.creeper.primed")
-  turtle.forward()
+  os.sleep(math.random(1, 10))
 end
 
