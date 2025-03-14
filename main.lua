@@ -14,8 +14,8 @@ sounds = {
 while true do
   local sound = sounds[math.random(1, #sounds)]
   speaker.playSound(sound, 0.1)
-  local timeout = math.random(60, 6000)
-  print("Next sound in: " .. timeout)
+  local timeout = math.random(5, 10)
+  print("Next sound in: " .. timeout .. "s")
   os.sleep(timeout)
 end
 
