@@ -1,6 +1,7 @@
 local mod
 
-print("loaded file from github!")
+print("Running program from github...")
+
 speaker = peripheral.find("speaker")
 
 sounds = {
@@ -13,6 +14,8 @@ sounds = {
 while true do
   local sound = sounds[math.random(1, #sounds)]
   speaker.playSound(sound, 0.1)
-  os.sleep(math.random(60, 6000))
+  local timeout = math.random(60, 6000)
+  print("Next sound in: " .. timeout)
+  os.sleep(timeout)
 end
 
