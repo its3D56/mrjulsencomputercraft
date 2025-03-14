@@ -1,7 +1,7 @@
 local mod
 
 print("loaded file from github!")
-speaker = peripherals.find("speaker")
+speaker = peripheral.find("speaker")
 
 while true do
   speaker.playSound("minecraft:entity.player.hurt")
