@@ -5,9 +5,9 @@ speaker = peripheral.find("speaker")
 
 sounds = {
   "entity.creeper.primed",
-  "entity.ender_dragon.roar"
-  "entity.enderman.death"
-  "entity.wolf.death"
+  "entity.ender_dragon.roar",
+  "entity.enderman.death",
+  "entity.wolf.death",
 }
 
 while true do
