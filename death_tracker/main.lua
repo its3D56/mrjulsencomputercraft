@@ -1,6 +1,6 @@
 local strings = require "cc.strings"
 
-local achor_dl = peripheral.find("create_target")
+local anchor_dl = peripheral.find("create_target")
 local monitor = peripheral.find("monitor")
 
 
