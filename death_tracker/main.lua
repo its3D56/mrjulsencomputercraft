@@ -3,6 +3,9 @@ local strings = require "cc.strings"
 local anchor_dl = peripheral.find("create_target")
 local monitor = peripheral.find("monitor")
 
+if not (anchor_dl or monitor) then
+  error("Could not find peripherals")
+end
 
 function main()
   local death_counts = {}
