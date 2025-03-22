@@ -1,1 +1,1 @@
-"Lua code for the turtles on MrJulsen's Modding Community Server" 
+Code for computercraft on mrjulsen's community server
