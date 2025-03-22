@@ -28,7 +28,7 @@ function update_death_counts(death_counts)
   for i = 1, 24 do
     local line = anchor_dl.getLine(i)
     
-    if line.starts(" ") then break end
+    if string.starts(line, " ") then break end
     
     local name, deathcount = parse_line(line)
     death_counts[name] = deathcount
