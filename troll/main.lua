@@ -1,6 +1,10 @@
 local mod
 
 print("Running program from github...")
+io.write("Input tne direction the turtle is facing: ")
+io.flush()
+
+
 
 speaker = peripheral.find("speaker")
 
@@ -10,6 +14,11 @@ sounds = {
   -- "entity.enderman.death",
   "entity.wolf.death",
 }
+
+function playFile(name)
+  local buffer = {}
+  
+end
 
 while true do
   local sound = sounds[math.random(1, #sounds)]
