@@ -57,7 +57,7 @@ function display_death_counts(death_counts)
       monitor.setBackgroundColour(colours.lightGrey)
     end
     monitor.setCursorPos(1, line_num)
-    local padding = string.rep(" ", spacing - name:len())
+    local padding = string.rep(" ", spacing - name:len() - 1)
     monitor.write(name .. padding .. death_count .. string.rep(" ", width))
     line_num = line_num + 1
   end
