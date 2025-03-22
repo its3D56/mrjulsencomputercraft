@@ -49,7 +49,7 @@ function display_death_counts(death_counts)
   local spacing = 24
   monitor.setCursorPos(1, 1)
   monitor.setBackgroundColour(colours.black)
-  monitor.write("USERNAME                DEATHS")
+  monitor.write("USERNAME" .. string.rep(" ", width - 14) .."DEATHS")
   for name, death_count in pairs(death_counts) do
     if line_num % 2 == 0 then
       monitor.setBackgroundColour(colours.grey)
