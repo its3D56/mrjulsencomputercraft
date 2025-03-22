@@ -48,8 +48,8 @@ function display_death_counts(death_counts)
   local spacing = 24
   for name, death_count in pairs(death_counts) do
     monitor.setCursorPos(1, line_num)
-    local padding = string.rep
-    monitor.write(name .. "    " .. death_count)
+    local padding = string.rep(" ", spacing - name:len())
+    monitor.write(name .. padding .. death_count)
     line_num = line_num + 1
   end
 end
