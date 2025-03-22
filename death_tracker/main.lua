@@ -46,6 +46,7 @@ function display_death_counts(death_counts)
   monitor.clear()
   monitor.setCursorPos(1, 1)
   for name, death_count in pairs(death_counts) do
+    print(name .. "    " .. death_count)
     monitor.write(name .. "    " .. death_count .. "\n")
   end
 end
