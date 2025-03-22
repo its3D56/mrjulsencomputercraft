@@ -50,9 +50,9 @@ function display_death_counts(death_counts)
   monitor.write("USERNAME                DEATHS")
   for name, death_count in pairs(death_counts) do
     if line_num % 2 == 0 then
-      monitor.setBackgroundColour(colour.grey)
+      monitor.setBackgroundColour(colours.grey)
     else
-      monitor.setBackgroundColour(colour.lightGrey)
+      monitor.setBackgroundColour(colours.lightGrey)
     end
     monitor.setCursorPos(1, line_num)
     local padding = string.rep(" ", spacing - name:len())
