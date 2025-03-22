@@ -44,10 +44,12 @@ end
 
 function display_death_counts(death_counts)
   monitor.clear()
-  monitor.setCursorPos(1, 1)
+  local line_num = 1
   for name, death_count in pairs(death_counts) do
+    monitor.setCursorPos(1, line_num)
     print(name .. "    " .. death_count)
-    monitor.write(name .. "    " .. death_count .. "\n")
+    monitor.write(name .. "    " .. death_count)
+    line_num = line_num + 1
   end
 end
 
