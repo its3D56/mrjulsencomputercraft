@@ -16,7 +16,7 @@ function main()
 
   if iterations % 150 == 0 then
     write_death_counts(death_counts)
-    -- death_counts = read_death_counts()
+    death_counts = read_death_counts()
   end
 
   iterations = iterations + 1
@@ -55,11 +55,17 @@ function display_death_counts(death_counts)
 end
 
 function write_death_counts(death_counts)
-
+  local f = fs.open("death_counts.json", "w")
+  local json = textutils.serializeJSON(death_counts)
+  f.write(json)
+  f.close()
 end
 
 function read_death_counts()
-
+  local f = fs.open("death_counts.json", "r")
+  local json = f.readAll()
+  f.close()
+  return textutils.unserializeJSON(json)
 end
 
 while main() do end
