@@ -31,8 +31,9 @@ function get_furnace_status(furnace)
   if furnace.isRunning() then
     status.activity = "Running"
   else
-    status.activity = "Idle   "
+    status.activity = "Idle"
   end
+  status.activity = pad(status.activity, 8)
 
   local electrodes = {}
   for i = 1, furnace.getElectrodeSlotCount() do
@@ -50,8 +51,7 @@ end
 
 function format_damage(fraction)
   local formatted = math.floor((1 - fraction) * 1000) / 10 .. "%"
-  local padding = string.rep(" ", 6 - formatted:len())
-  return formatted .. padding
+  return pad(formatted, 6)
 end
 
 return mod
