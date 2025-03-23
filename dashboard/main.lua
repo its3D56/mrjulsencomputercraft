@@ -4,8 +4,8 @@ local induction_matrix, err = wrequire "induction_matrix"
 local arc_furnaces = wrequire "arc_furnaces"
 
 local modules = {
-  induction_matrix,
   arc_furnace,
+  induction_matrix,
 }
 
 print(induction_matrix)
