@@ -65,12 +65,12 @@ end
 
 -- Adds padding at the end of text to make it a certain size
 function pad(text, size)
-  
   local len = text.len()
   if len >= size then
     return text
   end
-  return text .. string.rep(" ", size - text.len())
+  print("pad:" .. text)
+  return text .. string.rep(" ", size - len)
 end
 
 return mod
