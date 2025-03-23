@@ -1,7 +1,5 @@
-local mod = {}
-
-function mod.display(monitor)
+function display(monitor)
 
 end
 
-return mod
+return display
