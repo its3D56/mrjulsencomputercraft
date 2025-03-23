@@ -8,7 +8,7 @@ local modules = {
   induction_matrix,
 }
 
-print(arc_furnace.update())
+print(arc_furnaces.update())
 
 local monitor = peripheral.find("monitor")
 
