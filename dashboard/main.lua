@@ -65,6 +65,7 @@ end
 
 -- Adds padding at the end of text to make it a certain size
 function pad(text, size)
+  
   local len = text.len()
   if len >= size then
     return text
