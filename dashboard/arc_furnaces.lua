@@ -9,7 +9,6 @@ local arc_furnaces = {
 local statuses = {}
 
 function mod.update()
-  print("arc furnace status updated")
   for i, furnace in ipairs(arc_furnaces) do
     statuses[i] = get_furnace_status(furnace)
   end

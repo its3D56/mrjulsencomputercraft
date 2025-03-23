@@ -8,6 +8,8 @@ local modules = {
   arc_furnace,
 }
 
+print(induction_matrix)
+
 local monitor = peripheral.find("monitor")
 
 function mod.main()
