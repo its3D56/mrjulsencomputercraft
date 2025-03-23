@@ -3,7 +3,7 @@ local mod = {}
 local induction_matrix, err = wrequire "induction_matrix"
 local arc_furnaces = wrequire "arc_furnaces"
 
-local draw_funcs = {
+local modules = {
   induction_matrix
 }
 
@@ -17,10 +17,14 @@ function mod.main()
 end
 
 function loop()
+  for _, modules in ipairs(modules) do
+    module.update()
+  end
+
   monitor.clear()
   monitor.setCursorPos(1, 1)
-  for _, draw_func in ipairs(draw_funcs) do
-    draw_func(monitor)
+  for _, module in ipairs(modules) do
+    module.display(monitor)
     monitor.newlineCursor()
   end
   os.sleep(0.5)
