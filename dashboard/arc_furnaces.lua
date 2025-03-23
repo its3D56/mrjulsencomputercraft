@@ -39,9 +39,9 @@ function get_furnace_status(furnace)
     local electrode = furnace.getElectrodeStack(i)
     if electrode.name ~= "immersiveengineering:graphite_electrode" then
       electrodes[i] = "None"
-      continue
+    else
+      electrodes[i] = ((1 - electrode.damage / electrode.maxDamage) * 100) .. "%"
     end
-    electrodes[i] = ((1 - electrode.damage / electrode.maxDamage) * 100) .. "%"
   end
   status.electrodes = electrodes.1 .. " " .. electrodes.2 .. " " .. electrodes.3
 
