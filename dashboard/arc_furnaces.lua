@@ -50,7 +50,7 @@ end
 
 function format_damage(fraction)
   local formatted = math.floor((1 - fraction) * 1000) / 10 .. "%"
-  local padding = " ":rep(6 - formatted.len())
+  local padding = rep(" ", 6 - formatted.len())
   return formatted .. padding
 end
 
