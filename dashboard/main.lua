@@ -4,7 +4,7 @@ local induction_matrix = wrequire "induction_matrix"
 local arc_furnaces = wrequire "arc_furnaces"
 
 local modules = {
-  arc_furnace,
+  arc_furnaces,
   induction_matrix,
 }
 
@@ -18,7 +18,7 @@ function loop()
   print("started loop")
   
   for _, module in ipairs(modules) do
-    print(module)
+    print("in loop")
     module.update()
   end
 
