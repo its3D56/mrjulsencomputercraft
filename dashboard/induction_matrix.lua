@@ -1,7 +1,6 @@
 local mod = {}
-local im = peripheral.find("inductionPort", function(name, _)
-  return name == "inductionPort_0"
-end)
+
+local im = peripheral.wrap "inductionPort_0"
 
 function mod.update()
   stored_power = format_joules(im.getEnergy())
