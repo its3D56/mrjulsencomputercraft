@@ -4,13 +4,11 @@ local induction_matrix, err = wrequire "induction_matrix"
 local arc_furnaces = wrequire "arc_furnaces"
 
 local modules = {
-  induction_matrix
+  induction_matrix,
+  arc_furnace,
 }
 
-print(err)
-
 local monitor = peripheral.find("monitor")
-print(monitor)
 
 function mod.main()
   while loop() do end
