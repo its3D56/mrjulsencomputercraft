@@ -1,4 +1,4 @@
-local mod
+local mod = {}
 
 function mod.main()
   while loop() do end

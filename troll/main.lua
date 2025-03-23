@@ -1,4 +1,4 @@
-local mod
+local mod = {}
 
 print("Running program from github...")
 io.write("Input tne direction the turtle is facing: ")
