@@ -16,7 +16,7 @@ function mod.display(monitor)
   monitor.writeLine("INDUCTION MATRIX:")
   monitor.writeLine("  Stored Power: " .. stored_power .. "FE (" .. stored_percentage .. "%)")
   monitor.writeLine("  Capacity:     " .. capacity .. "FE")
-  monitor.wrtieLine("  Input:        " .. input .. "FE/t")
+  monitor.writeLine("  Input:        " .. input .. "FE/t")
   monitor.writeLine("  Output:       " .. output .. "FE/t")
   monitor.writeLine("  Transfer Cap: " .. transfer_cap .. "FE/t")
 end
