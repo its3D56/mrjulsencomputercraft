@@ -1,7 +1,9 @@
 local mod = {}
 
-local induction_matrix = wrequire "induction_matrix"
+local induction_matrix, err = wrequire "induction_matrix"
 local arc_furnaces = wrequire "arc_furnaces"
+
+print(err)
 
 local monitor = peripheral.find("monitor")
 
