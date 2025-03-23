@@ -16,7 +16,6 @@ end
 
 function loop()
   for _, module in ipairs(modules) do
-    print("in loop")
     module.update()
   end
 

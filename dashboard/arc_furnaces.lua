@@ -22,7 +22,7 @@ function mod.display(monitor)
 end
 
 function format_furnace_status(status, number)
-  return "#" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes
+  return "  #" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes
 end
 
 function get_furnace_status(furnace)
@@ -38,14 +38,20 @@ function get_furnace_status(furnace)
   for i = 1, furnace.getElectrodeSlotCount() do
     local electrode = furnace.getElectrodeStack(i)
     if electrode.name ~= "immersiveengineering:graphite_electrode" then
-      electrodes[i] = "None"
+      electrodes[i] = "Broken"
     else
-      electrodes[i] = ((1 - electrode.damage / electrode.maxDamage) * 100) .. "%"
+      electrodes[i] = format_damage(electrode.damage / electrode.maxDamage)
     end
   end
   status.electrodes = electrodes[1] .. " " .. electrodes[2] .. " " .. electrodes[3]
 
   return status
+end
+
+function format_damage(fraction)
+  local formatted = math.floor((1 - fraction) * 1000) / 10 .. "%"
+  local padding = " ":rep(6 - formatted.len())
+  return formatted .. padding
 end
 
 return mod
