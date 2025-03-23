@@ -17,7 +17,7 @@ function mod.main()
 end
 
 function loop()
-  for _, modules in ipairs(modules) do
+  for _, module in ipairs(modules) do
     module.update()
   end
 
@@ -27,6 +27,7 @@ function loop()
     module.display(monitor)
     monitor.newlineCursor()
   end
+  
   os.sleep(0.5)
   return true
 end
