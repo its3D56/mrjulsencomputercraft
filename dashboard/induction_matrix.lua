@@ -4,12 +4,12 @@ local im = peripheral.find("inductionPort", function(name, _)
 end)
 
 function mod.update()
-  stored_power = j_to_fe(im.getEnergy())
-  capacity = j_to_fe(im.getMaxEnergy())
+  stored_power = format_number(im.getEnergy())
+  capacity = format_number(im.getMaxEnergy())
   stored_percentage = math.floor(stored_power / capacity * 1000) / 10
-  input = j_to_fe(im.getLastInput())
-  output = j_to_fe(im.getLastOutput())
-  transfer_cap = j_to_fe(im.getTransferCap())
+  input = format_number(im.getLastInput())
+  output = format_number(im.getLastOutput())
+  transfer_cap = format_number(im.getTransferCap())
 end
 
 function mod.display(monitor)
@@ -18,8 +18,8 @@ function mod.display(monitor)
   monitor.writeLine("  I/O: " .. input .. "FE/t / " .. output .. "FE/t" .. " Cap: " .. transfer_cap .. "FE/t")
 end
 
-function j_to_fe(j)
-  return j * 0.4
+function format_joules(j)
+  return format_number(j * 0.4)
 end
 
 return mod
