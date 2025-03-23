@@ -18,6 +18,7 @@ function wrequire(path)
     return nil
   end
   local src = src_req.readAll()
+  src_req.close()
   local module, err = load(src, "", "t", _ENV)
   if err then
     error(err)
