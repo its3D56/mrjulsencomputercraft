@@ -6,6 +6,7 @@ local arc_furnaces = wrequire "arc_furnaces"
 print(err)
 
 local monitor = peripheral.find("monitor")
+print(monitor)
 
 function mod.main()
   while loop() do end
