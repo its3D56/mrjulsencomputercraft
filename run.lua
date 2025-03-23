@@ -11,7 +11,7 @@ end
 src_url_f.close()
 src_url_f = nil
 
-function get_mod(path)
+function wrequire(path)
   local src_req, err = http.get(src_url .. path .. ".lua")
   if err then
     return nil, err
@@ -21,14 +21,14 @@ function get_mod(path)
   if err then
     return nil, err
   end
-  return module
+  return module()
 end
 
-local main_mod, err = get_mod("main")
+local main_mod, err = wrequire "main"
 if err then
   error(err)
   return
 end
 
 print("Module loaded successfully")
-return main_mod().main()
+return main_mod.main()
