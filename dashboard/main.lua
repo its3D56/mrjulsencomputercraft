@@ -19,7 +19,7 @@ function loop()
   return true
 end
 
-function monitot.moveCursor(x, y)
+function monitor.moveCursor(x, y)
   local cx, cy = monitor.getCursorPos()
   monitor.setCursorPos(cx + x, cy + y)
 end
