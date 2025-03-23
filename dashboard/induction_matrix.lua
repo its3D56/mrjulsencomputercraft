@@ -4,12 +4,12 @@ local im = peripheral.find("inductionPort", function(name, _)
 end)
 
 function mod.update()
-  stored_power = format_number(im.getEnergy())
-  capacity = format_number(im.getMaxEnergy())
-  stored_percentage = format_number(im.getEnergyFilledPercentage)
-  input = format_number(im.getLastInput())
-  output = format_number(im.getLastOutput())
-  transfer_cap = format_number(im.getTransferCap())
+  stored_power = format_joules(im.getEnergy())
+  capacity = format_joules(im.getMaxEnergy())
+  stored_percentage = format_joules(im.getEnergyFilledPercentage)
+  input = format_joules(im.getLastInput())
+  output = format_joules(im.getLastOutput())
+  transfer_cap = format_joules(im.getTransferCap())
 end
 
 function mod.display(monitor)
