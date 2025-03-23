@@ -3,7 +3,6 @@ local mod = {}
 local im = peripheral.wrap "inductionPort_0"
 
 function mod.update()
-  print("gdoigus")
   stored_power = format_joules(im.getEnergy())
   capacity = format_joules(im.getMaxEnergy())
   stored_percentage = im.getEnergyFilledPercentage() * 100
