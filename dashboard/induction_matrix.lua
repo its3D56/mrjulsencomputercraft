@@ -10,8 +10,8 @@ function display(monitor)
   local output = j_to_fe(im.getLastOutput())
   local transfer_cap = j_to_fe(im.getTransferCap())
   monitor.writeLine("INDUCTION MATRIX:")
-  monitor.writeline("  Stored power: " .. stored_power .. "FE / " .. capacity .. "FE (" .. stored_percentage .. "%)")
-  monitor.writeline("  I/O: " .. input .. "FE/t / " .. output .. "FE/t" .. " Cap: " .. transfer_cap .. "FE/t")
+  monitor.writeLine("  Stored power: " .. stored_power .. "FE / " .. capacity .. "FE (" .. stored_percentage .. "%)")
+  monitor.writeLine("  I/O: " .. input .. "FE/t / " .. output .. "FE/t" .. " Cap: " .. transfer_cap .. "FE/t")
 end
 
 function j_to_fe(j)
