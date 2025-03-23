@@ -8,8 +8,6 @@ local modules = {
   induction_matrix,
 }
 
-print(arc_furnaces.update())
-
 local monitor = peripheral.find("monitor")
 
 function mod.main()
@@ -18,6 +16,7 @@ end
 
 function loop()
   for _, module in ipairs(modules) do
+    print(module)
     module.update()
   end
 
