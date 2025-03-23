@@ -51,7 +51,6 @@ end
 
 function format_damage(fraction)
   local formatted = math.floor((1 - fraction) * 1000) / 10 .. "%"
-  print("formatted: " .. formatted)
   return pad(formatted, 6)
 end
 

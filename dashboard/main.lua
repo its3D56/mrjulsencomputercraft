@@ -69,7 +69,6 @@ function pad(text, size)
   if len >= size then
     return text
   end
-  print("pad:" .. text)
   return text .. string.rep(" ", size - len)
 end
 
