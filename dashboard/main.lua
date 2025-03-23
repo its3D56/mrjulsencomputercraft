@@ -19,7 +19,7 @@ end
 function loop()
   monitor.clear()
   monitor.setCursorPos(1, 1)
-  for draw_func in draw_funcs do
+  for _, draw_func in ipairs(draw_funcs) do
     draw_func(monitor)
     monitor.newlineCursor()
   end
