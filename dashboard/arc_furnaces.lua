@@ -22,6 +22,7 @@ function mod.display(monitor)
 end
 
 function draw_furnace_status(status, number)
+  print("drawing furnace status")
   monitor.writeLine("#" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes)
 end
 
