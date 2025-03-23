@@ -19,6 +19,7 @@ function loop()
   monitor.moveCursor(0, 1)
   arc_furnaces.display(monitor)
   monitor.moveCursor(0, 1)
+  os.sleep(0.5)
   return true
 end
 
