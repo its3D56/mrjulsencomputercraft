@@ -11,6 +11,7 @@ local modules = {
 local monitor = peripheral.find("monitor")
 
 function mod.main()
+  print("sfdsf")
   while loop() do end
 end
 
