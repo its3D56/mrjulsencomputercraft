@@ -43,7 +43,7 @@ function get_furnace_status(furnace)
       electrodes[i] = ((1 - electrode.damage / electrode.maxDamage) * 100) .. "%"
     end
   end
-  status.electrodes = electrodes.1 .. " " .. electrodes.2 .. " " .. electrodes.3
+  status.electrodes = electrodes[1] .. " " .. electrodes[2] .. " " .. electrodes[3]
 
   return status
 end
