@@ -29,4 +29,6 @@ if err then
   error(err)
   return
 end
+
+print("Module loaded successfully")
 return main_mod().main()
