@@ -1,6 +1,6 @@
 local mod = {}
 
-function mod.display()
+function mod.display(monitor)
 
 end
 

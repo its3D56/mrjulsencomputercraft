@@ -14,12 +14,14 @@ src_url_f = nil
 function wrequire(path)
   local src_req, err = http.get(src_url .. path .. ".lua")
   if err then
-    return nil, err
+    error(err)
+    return nil
   end
   local src = src_req.readAll()
   local module, err = load(src, "", "t", _ENV)
   if err then
-    return nil, err
+    error(err)
+    return nil
   end
   return module()
 end
