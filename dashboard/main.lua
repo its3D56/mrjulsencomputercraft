@@ -15,14 +15,10 @@ function mod.main()
 end
 
 function loop()
-  print("started loop")
-  
   for _, module in ipairs(modules) do
     print("in loop")
     module.update()
   end
-
-  print("started drawing")
 
   monitor.clear()
   monitor.setCursorPos(1, 1)

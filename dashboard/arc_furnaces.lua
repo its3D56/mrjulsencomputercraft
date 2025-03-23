@@ -17,13 +17,12 @@ end
 function mod.display(monitor)
   monitor.writeLine("ARC FURNACES:")    
   for i, furnace in ipairs(statuses) do
-    draw_furnace_status(furnace, i)
+    monitor.writeLine(format_furnace_status(furnace, i))
   end
 end
 
-function draw_furnace_status(status, number)
-  print("drawing furnace status")
-  monitor.writeLine("#" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes)
+function format_furnace_status(status, number)
+  return "#" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes
 end
 
 function get_furnace_status(furnace)
