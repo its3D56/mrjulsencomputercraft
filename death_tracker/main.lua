@@ -1,3 +1,9 @@
+local mod
+
+function mod.main()
+  while loop() do end
+end
+
 local strings = require "cc.strings"
 
 local anchor_dl = peripheral.find("create_target")
@@ -7,7 +13,7 @@ if not (anchor_dl or monitor) then
   error("Could not find peripherals")
 end
 
-function main()
+function loop()
   local death_counts = {}
 
   local iterations = 0
@@ -77,4 +83,4 @@ function read_death_counts()
   return textutils.unserializeJSON(json)
 end
 
-while main() do end
+return mod
