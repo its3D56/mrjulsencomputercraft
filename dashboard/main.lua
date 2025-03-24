@@ -1,9 +1,3 @@
--- CONFIG:
-local speaker_volume = 64
-local speaker_name = "Hall 9000"
-
-
-
 local mod = {}
 
 local hall9000 = wrequire "hall9000"
@@ -11,6 +5,7 @@ local hall9000 = wrequire "hall9000"
 local modules = {
   wrequire "induction_matrix",
   wrequire "arc_furnaces",
+  wrequire "digital_miner"
 }
 
 local monitor = peripheral.find("monitor")
