@@ -10,7 +10,7 @@ local buffer_barrel = peripheral.wrap "minecraft:barrel_1"
 local entangloporter = peripheral.wrap "quantumEntangloporter_0"
 local diverter = peripheral.wrap "diversionTransporter_0"
 
-function init()
+local function init()
   enable_output(false)
   enable_input(true)
 end
@@ -60,7 +60,7 @@ function mod.display(monitor)
   end
 end
 
-function check_buffer_empty()
+local function check_buffer_empty()
   local contents = buffer_barrel.list()
   for _, _ in pairs(contents) do
     return false
@@ -68,20 +68,20 @@ function check_buffer_empty()
   return true
 end
 
-function log_contents()
+local function log_contents()
   local contents = buffer_barrel.list()
   for location, _ in pairs(contents) do
     add_to_log(buffer_barrel.getItemDetail(location))
   end
 end
 
-function add_to_log(item)
+local function add_to_log(item)
   local res = {}
   if not contains(item_order, item.name) then
     table.insert(item_order, item.name)
   end
 
-  local prev_count = mining_results[item.name].count or 0
+  local prev_count = (mining_results[item.name] or {count = 0}).count
   
   res.display_name = item.displayName
   res.count = item.count + prev_count
@@ -89,14 +89,14 @@ function add_to_log(item)
   mining_results[item.name] = res
 end
 
-function contains(input_table, element)
+local function contains(input_table, element)
   for _, e in pairs(input_table) do
     if e == element then return true end
   end
   return false
 end
 
-function enable_output(enabled)
+local function enable_output(enabled)
   if enabled then
     diverter.setMode("south", "DISABLED")
   else
@@ -104,7 +104,7 @@ function enable_output(enabled)
   end
 end
 
-function enable_input(enabled)
+local function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
 
