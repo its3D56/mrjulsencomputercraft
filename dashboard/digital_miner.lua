@@ -100,7 +100,7 @@ function test()
   enable_output()
 end
 
-local function enable_output(enabled)
+function enable_output(enabled)
   if enabled then
     diverter.setMode("south", "DISABLED")
   else
@@ -108,7 +108,7 @@ local function enable_output(enabled)
   end
 end
 
-local function enable_input(enabled)
+function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
 
