@@ -23,7 +23,7 @@ function mod.display(monitor)
   monitor.writeLine("  Transfer Cap: " .. transfer_cap .. " FE/t")
 end
 
-local function format_joules(j)
+function format_joules(j)
   return format_number(j * 0.4)
 end
 

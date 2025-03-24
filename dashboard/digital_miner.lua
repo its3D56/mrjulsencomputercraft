@@ -10,7 +10,7 @@ local buffer_barrel = peripheral.wrap "minecraft:barrel_1"
 local entangloporter = peripheral.wrap "quantumEntangloporter_0"
 local diverter = peripheral.wrap "diversionTransporter_0"
 
-local function init()
+function init()
   enable_output(false)
   enable_input(true)
 end
@@ -60,7 +60,7 @@ function mod.display(monitor)
   end
 end
 
-local function check_buffer_empty()
+function check_buffer_empty()
   local contents = buffer_barrel.list()
   for _, _ in pairs(contents) do
     return false
@@ -68,14 +68,14 @@ local function check_buffer_empty()
   return true
 end
 
-local function log_contents()
+function log_contents()
   local contents = buffer_barrel.list()
   for location, _ in pairs(contents) do
     add_to_log(buffer_barrel.getItemDetail(location))
   end
 end
 
-local function add_to_log(item)
+function add_to_log(item)
   local res = {}
   if not contains(item_order, item.name) then
     table.insert(item_order, item.name)
@@ -89,15 +89,11 @@ local function add_to_log(item)
   mining_results[item.name] = res
 end
 
-local function contains(input_table, element)
+function contains(input_table, element)
   for _, e in pairs(input_table) do
     if e == element then return true end
   end
   return false
-end
-
-function test()
-  enable_output()
 end
 
 function enable_output(enabled)
@@ -111,10 +107,6 @@ end
 function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
-
-test()
-
-print(enable_output)
 
 init()
 

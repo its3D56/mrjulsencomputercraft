@@ -21,11 +21,11 @@ function mod.display(monitor)
   end
 end
 
-local function format_furnace_status(status, number)
+function format_furnace_status(status, number)
   return "  #" .. number .. ": " .. status.activity .. " Electrodes: " .. status.electrodes
 end
 
-local function get_furnace_status(furnace)
+function get_furnace_status(furnace)
   local status = {}
   
   if furnace.isRunning() then
@@ -49,7 +49,7 @@ local function get_furnace_status(furnace)
   return status
 end
 
-local function format_damage(fraction)
+function format_damage(fraction)
   local formatted = math.floor((1 - fraction) * 1000) / 10 .. "%"
   return pad(formatted, 6)
 end
