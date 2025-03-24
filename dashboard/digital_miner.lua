@@ -30,7 +30,7 @@ function mod.update()
     return
   end
   
-  if timer = 0 then
+  if timer == 0 then
     enable_output(false)
     enable_input(true)
   elseif timer >= 2 then
