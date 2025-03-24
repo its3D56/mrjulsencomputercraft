@@ -107,9 +107,9 @@ function check_activity()
   if check_buffer_empty() then
     miner_running = false
     hall9000.trigger_event "mining_complete"
-    return true
+    return false
   end 
-  return false
+  return true
 end
 
 init()
