@@ -56,10 +56,6 @@ function mod.display(monitor)
   end
 end
 
-fuction reset()
-
-end
-
 function check_buffer_empty()
   local contents = buffer_barrel.list()
   for _, _ in pairs(contents) do
