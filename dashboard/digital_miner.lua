@@ -108,6 +108,8 @@ local function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
 
+print(enable_output)
+
 init()
 
 return mod
