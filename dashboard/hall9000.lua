@@ -19,7 +19,10 @@ end
 
 function mod.trigger_event(event_name, ...)
   local handler = dialogue[event_name]
-  if not handler then return end
+  if not handler then
+    print("Hall9000 WARN: No handler for \"" .. event_name .. "\"")
+    return
+  end
   handler(...)
 end
 
