@@ -33,7 +33,7 @@ function init_speakers()
   narrator_speaker.setVolume(volume)
   narrator_speaker.setName(" ")
 
-  chat_speaker.setVolume(speaker_volume)
+  chat_speaker.setVolume(volume)
   chat_speaker.setName(name)
 end
 
