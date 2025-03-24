@@ -52,7 +52,7 @@ function mod.display(monitor)
   monitor.writeLine("  Mining Results:")
   for _, name in ipairs(item_order) do
     item = mining_results[name]
-    monitor.writeLine("  - " .. item.count .. "x " .. item.display_name)
+    monitor.writeLine("  - " .. format_number(item.count) .. "x " .. item.display_name)
   end
 end
 
