@@ -78,7 +78,7 @@ function pad(text, size)
 end
 
 local narrator_speaker = peripheral.wrap("speaker_block_0")
-local chat_speaker = perhipheral.wrap("speaker_block_1")
+local chat_speaker = peripheral.wrap("speaker_block_1")
 
 function speaker_setup()
   narrator_speaker.setVolume(speaker_volume)
