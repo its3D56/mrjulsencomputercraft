@@ -1,6 +1,6 @@
 local src_url_f, err = fs.open("src_url.txt", "r")
 if err then
-  error(err)
+  error("Failed to get source url" .. err)
   return
 end
 local src_url = src_url_f.readAll():sub(1, -2)
@@ -19,14 +19,14 @@ end
 function wload(path, env)
   local src_req, err = http.get(src_url .. path .. ".lua")
   if err then
-    error("Error getting file \"" .. path .. ".lua\": " .. err)
+    error("Error getting file \"" .. path .. ".lua\": " .. err, 2)
     return nil
   end
   local src = src_req.readAll()
   src_req.close()
   local module, err = load(src, path .. ".lua", "t", env)
   if err then
-    error("Error loading file \"" .. path .. ".lua\": " .. err)
+    error("Error loading file \"" .. path .. ".lua\": " .. err, 2)
     return
   end
   return module
