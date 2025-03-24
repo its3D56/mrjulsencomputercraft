@@ -13,7 +13,7 @@ local chat_speaker = peripheral.wrap("speaker_block_1")
 
 function mod.init()  
   init_speakers()
-  dialogue = wload("dialogue", interface)
+  dialogue = wload("dialogue", interface)()
   mod.trigger_event("startup")
 end
 
