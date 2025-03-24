@@ -26,16 +26,11 @@ function mod.update()
   
   if not miner_running then return end
 
-  if buffer_empty then
-    miner_running = false
-    hal9000.trigger_event "mining_complete"
-    return
-  end
-  
   if timer == 0 then
     enable_output(false)
     enable_input(true)
   elseif timer >= 2 then
+    if not check_activity() then return end
     enable_input(false)
     log_contents()
     enable_output(true)
@@ -106,6 +101,15 @@ end
 
 function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
+end
+
+function check_activity()
+  if check_buffer_empty() then
+    miner_running = false
+    hall9000.trigger_event "mining_complete"
+    return true
+  end 
+  return false
 end
 
 init()
