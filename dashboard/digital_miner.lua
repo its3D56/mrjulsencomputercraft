@@ -6,7 +6,7 @@ local miner_running = false
 local mining_results = {}
 local item_order = {}
 
-local buffer_barrel = periperal.wrap "minecraft:barrel_1"
+local buffer_barrel = peripheral.wrap "minecraft:barrel_1"
 local entangloporter = peripheral.wrap "quantumEntangloporter_0"
 local diverter = peripheral.wrap "diversionTransporter_0"
 
