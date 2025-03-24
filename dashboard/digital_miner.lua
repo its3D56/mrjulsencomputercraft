@@ -22,6 +22,7 @@ function mod.update()
     miner_running = true
     mining_results = {}
     item_order = {}
+    timer = 0
   end
   
   if not miner_running then return end
@@ -29,7 +30,7 @@ function mod.update()
   if timer == 0 then
     enable_output(false)
     enable_input(true)
-  elseif timer >= 2 then
+  elseif timer == 2 then
     if not check_activity() then return end
     enable_input(false)
     log_contents()
@@ -53,6 +54,10 @@ function mod.display(monitor)
     item = mining_results[name]
     monitor.writeLine("  - " .. item.count .. "x " .. item.display_name)
   end
+end
+
+fuction reset()
+
 end
 
 function check_buffer_empty()
