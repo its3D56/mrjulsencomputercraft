@@ -28,9 +28,9 @@ end
 
 function init_speakers()
   local name = config.name
-  local voume = config.volume
+  local volume = config.speaker_volume
   
-  narrator_speaker.setVolume(speaker_volume)
+  narrator_speaker.setVolume(volume)
   narrator_speaker.setName(" ")
 
   chat_speaker.setVolume(speaker_volume)
@@ -46,6 +46,12 @@ function interface.say(message)
   narrator_speaker.activate()
   chat_seaker.activate()
   print(config.name .. ": " .. message)
+end
+
+function interface.pick(options)
+  local len = #options
+  if not len > 0 then return nil end
+  options[math.floor(math.rand(1, len))]
 end
 
 function interface.fmt_time(locale)
