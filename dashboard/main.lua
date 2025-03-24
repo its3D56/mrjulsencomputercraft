@@ -1,6 +1,6 @@
 local mod = {}
 
-local hall9000 = wrequire "hall9000"
+hall9000 = wrequire "hall9000"
 
 local modules = {
   wrequire "induction_matrix",
