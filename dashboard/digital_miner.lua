@@ -10,8 +10,10 @@ local buffer_barrel = peripheral.wrap "minecraft:barrel_1"
 local entangloporter = peripheral.wrap "quantumEntangloporter_0"
 local diverter = peripheral.wrap "diversionTransporter_0"
 
-enable_output(false)
-enable_input(true)
+function init()
+  enable_output(false)
+  enable_input(true)
+end
 
 function mod.update()
   local buffer_empty = check_buffer_empty()
@@ -105,5 +107,7 @@ end
 function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
+
+init()
 
 return mod
