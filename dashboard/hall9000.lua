@@ -50,8 +50,8 @@ end
 
 function interface.pick(options)
   local len = #options
-  if not len > 0 then return nil end
-  options[math.floor(math.rand(1, len))]
+  if not len > 0 then return end
+  return options[math.floor(math.rand(1, len))]
 end
 
 function interface.fmt_time(locale)
