@@ -1,7 +1,8 @@
-local mod = {}
+local events = {}
 
-function mod.startup()
+function events.startup()
+  log "Starting..."
   say "test"
 end
 
-return mod
+return events

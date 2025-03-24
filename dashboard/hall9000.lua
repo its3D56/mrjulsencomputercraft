@@ -52,4 +52,8 @@ function interface.fmt_time(locale)
   
 end
 
+function interface.log(message)
+  print("Hall9000 LOG: " .. message)
+end
+
 return mod
