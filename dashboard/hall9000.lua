@@ -44,7 +44,7 @@ function interface.say(message)
   chat_speaker.setMessage(message)
 
   narrator_speaker.activate()
-  chat_seaker.activate()
+  chat_speaker.activate()
   print(config.name .. ": " .. message)
 end
 
