@@ -12,26 +12,27 @@ src_url_f.close()
 src_url_f = nil
 
 function wrequire(path)
+  local module = wload(path, _ENV)
+  return module()
+end
+
+function wload(path, env)
   local src_req, err = http.get(src_url .. path .. ".lua")
   if err then
-    error(err)
+    error("Error getting file \"" .. path .. ".lua\": " .. err)
     return nil
   end
   local src = src_req.readAll()
   src_req.close()
-  local module, err = load(src, "", "t", _ENV)
+  local module, err = load(src, path .. ".lua", "t", env)
   if err then
-    error(err)
-    return nil
+    error("Error loading file \"" .. path .. ".lua\": " .. err)
+    return
   end
-  return module()
+  return module
 end
 
-local main_mod, err = wrequire "main"
-if err then
-  error(err)
-  return
-end
+local main_mod = wrequire "main"
 
 print("Module loaded successfully")
 return main_mod.main()

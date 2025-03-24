@@ -1,11 +1,16 @@
+-- CONFIG:
+local speaker_volume = 64
+local speaker_name = "Hall 9000"
+
+
+
 local mod = {}
 
-local induction_matrix = wrequire "induction_matrix"
-local arc_furnaces = wrequire "arc_furnaces"
+local hall9000 = wrequire "hall9000"
 
 local modules = {
-  arc_furnaces,
-  induction_matrix,
+  wrequire "induction_matrix",
+  wrequire "arc_furnaces",
 }
 
 local monitor = peripheral.find("monitor")
@@ -70,6 +75,16 @@ function pad(text, size)
     return text
   end
   return text .. string.rep(" ", size - len)
+end
+
+local narrator_speaker = peripheral.wrap("speaker_block_0")
+local chat_speaker = perhipheral.wrap("speaker_block_1")
+
+function speaker_setup()
+  narrator_speaker.setVolume(speaker_volume)
+  narrator_speaker.setName(" ")
+  chat_speaker.setVolume(speaker_volume)
+  chat_speaker.setName(speaker_name)
 end
 
 return mod
