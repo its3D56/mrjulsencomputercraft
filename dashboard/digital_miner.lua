@@ -81,7 +81,7 @@ function add_to_log(item)
     table.insert(item_order, item.name)
   end
 
-  local prev_count = mining_results[item.name] or 0
+  local prev_count = mining_results[item.name].count or 0
   
   res.display_name = item.displayName
   res.count = item.count + prev_count
