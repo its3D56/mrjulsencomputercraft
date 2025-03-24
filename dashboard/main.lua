@@ -11,6 +11,7 @@ local modules = {
 local monitor = peripheral.find("monitor")
 
 function mod.main()
+  os.sleep(10) -- Wait for chunks with peripherals to load fully
   hall9000.init()
   while loop() do end
 end
