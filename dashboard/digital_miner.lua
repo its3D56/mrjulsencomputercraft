@@ -35,7 +35,7 @@ function mod.update()
     enable_input(false)
     log_contents()
     enable_output(true)
-  elseif timer >= 6 then
+  elseif timer >= 3 then
     timer = 0
     return
   end
