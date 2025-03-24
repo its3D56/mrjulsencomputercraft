@@ -96,6 +96,10 @@ local function contains(input_table, element)
   return false
 end
 
+function test()
+  enable_output()
+end
+
 local function enable_output(enabled)
   if enabled then
     diverter.setMode("south", "DISABLED")
@@ -107,6 +111,8 @@ end
 local function enable_input(enabled)
   entangloporter.setEjecting("ITEM", enabled)
 end
+
+test()
 
 print(enable_output)
 
