@@ -16,6 +16,7 @@ local modules = {
 local monitor = peripheral.find("monitor")
 
 function mod.main()
+  hall9000.init()
   while loop() do end
 end
 
