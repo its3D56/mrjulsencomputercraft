@@ -1,3 +1,5 @@
+os.sleep(10) -- Wait for chunks with peripherals to load in fully
+
 local mod = {}
 
 hall9000 = wrequire "hall9000"
@@ -11,7 +13,6 @@ local modules = {
 local monitor = peripheral.find("monitor")
 
 function mod.main()
-  os.sleep(10) -- Wait for chunks with peripherals to load fully
   hall9000.init()
   while loop() do end
 end
